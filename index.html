@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Premium quality sarees at affordable wholesale rates from Anayra Collection.">
   <title>Anayra Collection | Wholesale Sarees</title>
@@ -40,9 +43,9 @@
   </div></div></div></main>
   <footer class="text-center"><div class="container"><p class="mb-0">Visit us: <a href="https://share.google/YTvYLOor9DYOscM2D" target="_blank" rel="noopener noreferrer">View Store Location on Google Maps</a></p></div></footer>
   <script>
-    const wholesaleForm=document.getElementById("wholesaleForm");const submitButton=wholesaleForm.querySelector('button[type="submit"]');
+    const wholesaleForm=document.getElementById("wholesaleForm");const submitButton=wholesaleForm.querySelector('button[type="submit"]);
     const webhookUrl="https://script.google.com/macros/s/AKfycbzpG9foV4aYQi7r2OlJxF_IPsf39lSGfnjuuzRj8DGgXFPZ31r1xv628hy47OXznkTP/exec";const whatsappNumber="918252063732";const whatsappMessage="Hi, I just filled out the wholesale form and would like to see the catalog.";
-    wholesaleForm.addEventListener("submit",function(event){event.preventDefault();if(!wholesaleForm.checkValidity()){wholesaleForm.reportValidity();return}const originalButtonText=submitButton.textContent;submitButton.textContent="Please wait...";submitButton.disabled=true;fetch(webhookUrl,{method:"POST",body:new FormData(wholesaleForm),mode:"no-cors"}).then(function(){const encodedMessage=encodeURIComponent(whatsappMessage);window.location.href=`https://wa.me/${whatsappNumber}?text=${encodedMessage}`}).catch(function(error){console.error("Wholesale form submission failed:",error);alert("Something went wrong. Please try again.");submitButton.textContent=originalButtonText;submitButton.disabled=false})});
+    wholesaleForm.addEventListener("submit",function(event){event.preventDefault();if(!wholesaleForm.checkValidity()){wholesaleForm.reportValidity();return}const originalButtonText=submitButton.textContent;submitButton.textContent="Please wait...";submitButton.disabled=true;fetch(webhookUrl,{method:"POST",body:new URLSearchParams(new FormData(wholesaleForm)),mode:"no-cors"}).then(function(){const encodedMessage=encodeURIComponent(whatsappMessage);window.location.href=`https://wa.me/${whatsappNumber}?text=${encodedMessage}`}).catch(function(error){console.error("Wholesale form submission failed:",error);alert("Something went wrong. Please try again.");submitButton.textContent=originalButtonText;submitButton.disabled=false})});
   </script>
 </body>
-</html>  
+</html>
